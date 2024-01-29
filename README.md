@@ -42,4 +42,11 @@ Album class:
 - Number of songs
 - Length (in minutes)
 
+## User Stories:
+
+- As a user, I want to be able to add a song to my playlist
+- As a user, I want to view my playlist
+- As a user, I want to be able to remove a song from my playlist
+- As a user, I want to be able to view the # of songs in my playlist
+- As a user, I want to be able to click on a song in my playlist and view its artist, album, length, and genre
 
