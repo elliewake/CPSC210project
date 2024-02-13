@@ -15,7 +15,7 @@ keeping track of information related to songs, artists, and albums.
 - **Remove** a song from the playlist
 - View **# of songs** in playlist
 - View playlist **length** (in minutes)
-- Click on a song to view its **information**
+- Type a song's name to view its **information**
 
 **Class descriptions:**
 
@@ -41,6 +41,8 @@ Album class:
 - Release date
 - Number of songs
 - Length (in minutes)
+
+*Note: Only songs that have been *
 
 ## User Stories:
 
