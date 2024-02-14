@@ -3,12 +3,11 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 
-class PlaylistTest {
-    private Playlist testPlaylist;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class ArtistTest {
     private Song comeTogether;
     private Song something;
     private Artist theBeatles;
@@ -18,38 +17,29 @@ class PlaylistTest {
 
     @BeforeEach
     public void runBefore() {
-        testPlaylist = new Playlist();
         comeTogether = new Song("Come Together", 4, theBeatles, abbeyRoad, "Rock");
         something = new Song("Something", 3, theBeatles, abbeyRoad, "Rock");
         beatlesAlbums = new ArrayList<>();
-        beatlesAlbums.add(abbeyRoad);
         abbeyRoadSongs = new ArrayList<>();
         abbeyRoadSongs.add(comeTogether);
         abbeyRoadSongs.add(something);
         abbeyRoad = new Album(abbeyRoadSongs, 1969, 17, 47);
+        beatlesAlbums.add(abbeyRoad);
         theBeatles = new Artist("The Beatles", beatlesAlbums, "Rock");
     }
 
     @Test
-    public void testAddSong() {
-        testPlaylist.addSong(comeTogether);
-        assertEquals(testPlaylist.getNumSongs(), 1);
-        testPlaylist.addSong(something);
-        assertEquals(testPlaylist.getNumSongs(), 2);
+    public void testGetName() {
+        assertEquals(theBeatles.getName(), "The Beatles");
     }
 
     @Test
-    public void testRemoveSong() {
-        testPlaylist.addSong(comeTogether);
-        assertEquals(testPlaylist.getNumSongs(), 1);
-        testPlaylist.removeSong(comeTogether);
-        assertEquals(testPlaylist.getNumSongs(), 0);
+    public void testAlbums() {
+        assertEquals(theBeatles.getAlbums().get(0), abbeyRoad);
     }
 
     @Test
-    public void testGetLength() {
-        testPlaylist.addSong(something);
-        testPlaylist.addSong(comeTogether);
-        assertEquals(testPlaylist.getLengthMins(), 7);
+    public void testGetGenre() {
+        assertEquals(theBeatles.getGenre(), "Rock");
     }
 }

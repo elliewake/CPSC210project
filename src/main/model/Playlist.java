@@ -31,11 +31,9 @@ public class Playlist {
 
     // EFFECTS: returns length of playlist, in minutes
     public int getLengthMins() {
-        int i = 0;
         int length = 0;
-        while (i <= playlist.size()) {
-            length = length + playlist.get(i).getLength();
-            i = i++;
+        for (Song song : playlist) {
+            length += song.getLength();
         }
         return length;
     }

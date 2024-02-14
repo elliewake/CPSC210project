@@ -3,12 +3,11 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 
-class PlaylistTest {
-    private Playlist testPlaylist;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class SongTest {
     private Song comeTogether;
     private Song something;
     private Artist theBeatles;
@@ -18,7 +17,6 @@ class PlaylistTest {
 
     @BeforeEach
     public void runBefore() {
-        testPlaylist = new Playlist();
         comeTogether = new Song("Come Together", 4, theBeatles, abbeyRoad, "Rock");
         something = new Song("Something", 3, theBeatles, abbeyRoad, "Rock");
         beatlesAlbums = new ArrayList<>();
@@ -31,25 +29,12 @@ class PlaylistTest {
     }
 
     @Test
-    public void testAddSong() {
-        testPlaylist.addSong(comeTogether);
-        assertEquals(testPlaylist.getNumSongs(), 1);
-        testPlaylist.addSong(something);
-        assertEquals(testPlaylist.getNumSongs(), 2);
-    }
-
-    @Test
-    public void testRemoveSong() {
-        testPlaylist.addSong(comeTogether);
-        assertEquals(testPlaylist.getNumSongs(), 1);
-        testPlaylist.removeSong(comeTogether);
-        assertEquals(testPlaylist.getNumSongs(), 0);
+    public void testGetTitle() {
+        assertEquals(something.getTitle(), "Something");
     }
 
     @Test
     public void testGetLength() {
-        testPlaylist.addSong(something);
-        testPlaylist.addSong(comeTogether);
-        assertEquals(testPlaylist.getLengthMins(), 7);
+        assertEquals(something.getLength(), 3);
     }
 }
