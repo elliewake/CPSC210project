@@ -52,4 +52,11 @@ class PlaylistTest {
         testPlaylist.addSong(comeTogether);
         assertEquals(testPlaylist.getLengthMins(), 7);
     }
+
+    @Test
+    public void testGetPlaylist() {
+        testPlaylist.addSong(something);
+        testPlaylist.addSong(comeTogether);
+        assertEquals(testPlaylist.getPlaylist().get(1), comeTogether);
+    }
 }

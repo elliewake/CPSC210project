@@ -17,8 +17,6 @@ public class SongTest {
 
     @BeforeEach
     public void runBefore() {
-        comeTogether = new Song("Come Together", 4, theBeatles, abbeyRoad, "Rock");
-        something = new Song("Something", 3, theBeatles, abbeyRoad, "Rock");
         beatlesAlbums = new ArrayList<>();
         beatlesAlbums.add(abbeyRoad);
         abbeyRoadSongs = new ArrayList<>();
@@ -26,6 +24,8 @@ public class SongTest {
         abbeyRoadSongs.add(something);
         abbeyRoad = new Album(abbeyRoadSongs, 1969, 17, 47);
         theBeatles = new Artist("The Beatles", beatlesAlbums, "Rock");
+        comeTogether = new Song("Come Together", 4, theBeatles, abbeyRoad, "Rock");
+        something = new Song("Something", 3, theBeatles, abbeyRoad, "Rock");
     }
 
     @Test
@@ -36,5 +36,20 @@ public class SongTest {
     @Test
     public void testGetLength() {
         assertEquals(something.getLength(), 3);
+    }
+
+    @Test
+    public void testGetArtist() {
+        assertEquals(comeTogether.getArtist(),theBeatles);
+    }
+
+    @Test
+    public void testGetAlbum() {
+        assertEquals(something.getAlbum(), abbeyRoad);
+    }
+
+    @Test
+    public void testGetGenre() {
+        assertEquals(something.getGenre(), "Rock");
     }
 }
