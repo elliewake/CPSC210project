@@ -8,7 +8,7 @@ public class Album {
     private int numSongs;
     private int length;
 
-    public Album (ArrayList<Song> tracklist, int releaseYear, int numSongs, int length) {
+    public Album(ArrayList<Song> tracklist, int releaseYear, int numSongs, int length) {
         this.tracklist = tracklist;
         this.releaseYear = releaseYear;
         this.numSongs = numSongs;

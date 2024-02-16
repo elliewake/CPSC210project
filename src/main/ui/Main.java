@@ -8,6 +8,7 @@ import model.Song;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+@SuppressWarnings("methodlength")
 public class Main {
     private static Playlist playlist;
     private static Scanner scanner;
@@ -121,37 +122,46 @@ public class Main {
         String albumChoice = scanner.nextLine();
 
         if (albumChoice.equals("1")) {
-            System.out.println("Please choose which song you'd like to add by typing the corresponding number:"
-                    + "\n1. Come Together \n2. Something");
-            String songChoice = scanner.nextLine();
+            getAbbeyRoadSong();
 
-            if (songChoice.equals("1")) {
-                playlist.addSong(comeTogether);
-                System.out.println("Added Come Together to playlist!");
-                songAdded();
-            } else if (songChoice.equals("2")) {
-                playlist.addSong(something);
-                System.out.println("Added Something to playlist!");
-                songAdded();
-            } else {
-                System.out.println("Invalid song choice.");
-            }
         } else if (albumChoice.equals("2")) {
-            System.out.println("Please choose which song you'd like to add by typing the corresponding number:"
-                    + "\n1. Eleanor Rigby \n2. For No One");
-            String songChoice = scanner.nextLine();
+            getRevolverSong();
+        }
+    }
 
-            if (songChoice.equals("1")) {
-                playlist.addSong(eleanorRigby);
-                System.out.println("Added Eleanor Rigby to playlist!");
-                songAdded();
-            } else if (songChoice.equals("2")) {
-                playlist.addSong(forNoOne);
-                System.out.println("Added For No One to playlist!");
-                songAdded();
-            } else {
-                System.out.println("Invalid song choice.");
-            }
+    public static void getAbbeyRoadSong() {
+        System.out.println("Please choose which song you'd like to add by typing the corresponding number:"
+                + "\n1. Come Together \n2. Something");
+        String songChoice = scanner.nextLine();
+
+        if (songChoice.equals("1")) {
+            playlist.addSong(comeTogether);
+            System.out.println("Added Come Together to playlist!");
+            songAdded();
+        } else if (songChoice.equals("2")) {
+            playlist.addSong(something);
+            System.out.println("Added Something to playlist!");
+            songAdded();
+        } else {
+            System.out.println("Invalid song choice.");
+        }
+    }
+
+    public static void getRevolverSong() {
+        System.out.println("Please choose which song you'd like to add by typing the corresponding number:"
+                + "\n1. Eleanor Rigby \n2. For No One");
+        String songChoice = scanner.nextLine();
+
+        if (songChoice.equals("1")) {
+            playlist.addSong(eleanorRigby);
+            System.out.println("Added Eleanor Rigby to playlist!");
+            songAdded();
+        } else if (songChoice.equals("2")) {
+            playlist.addSong(forNoOne);
+            System.out.println("Added For No One to playlist!");
+            songAdded();
+        } else {
+            System.out.println("Invalid song choice.");
         }
     }
 
@@ -159,41 +169,51 @@ public class Main {
         String albumChoice = scanner.nextLine();
 
         if (albumChoice.equals("1")) {
-            System.out.println("Please choose which song you'd like to add by typing the corresponding number:"
-                    + "\n1. Brown Sugar \n2. Wild Horses");
-            String songChoice = scanner.nextLine();
+            getStickyFingersSong();
 
-            if (songChoice.equals("1")) {
-                playlist.addSong(brownSugar);
-                System.out.println("Added Brown Sugar to playlist!");
-                songAdded();
-            } else if (songChoice.equals("2")) {
-                playlist.addSong(wildHorses);
-                System.out.println("Added Wild Horses to playlist!");
-                songAdded();
-            } else {
-                System.out.println("Invalid song choice.");
-            }
         } else if (albumChoice.equals("2")) {
-            System.out.println("Please choose which song you'd like to add by typing the corresponding number:"
-                    + "\n1. Rocks Off \n2. Sweet Virginia");
-            String songChoice = scanner.nextLine();
+            getExileSong();
 
-            if (songChoice.equals("1")) {
-                playlist.addSong(rocksOff);
-                System.out.println("Added Rocks Off to playlist!");
-                songAdded();
-            } else if (songChoice.equals("2")) {
-                playlist.addSong(sweetVirginia);
-                System.out.println("Added Sweet Virginia to playlist!");
-                songAdded();
-            } else {
-                System.out.println("Invalid song choice.");
-            }
         } else {
             System.out.println("Invalid album choice.");
         }
 
+    }
+
+    public static void getStickyFingersSong() {
+        System.out.println("Please choose which song you'd like to add by typing the corresponding number:"
+                + "\n1. Brown Sugar \n2. Wild Horses");
+        String songChoice = scanner.nextLine();
+
+        if (songChoice.equals("1")) {
+            playlist.addSong(brownSugar);
+            System.out.println("Added Brown Sugar to playlist!");
+            songAdded();
+        } else if (songChoice.equals("2")) {
+            playlist.addSong(wildHorses);
+            System.out.println("Added Wild Horses to playlist!");
+            songAdded();
+        } else {
+            System.out.println("Invalid song choice.");
+        }
+    }
+
+    public static void getExileSong() {
+        System.out.println("Please choose which song you'd like to add by typing the corresponding number:"
+                + "\n1. Rocks Off \n2. Sweet Virginia");
+        String songChoice = scanner.nextLine();
+
+        if (songChoice.equals("1")) {
+            playlist.addSong(rocksOff);
+            System.out.println("Added Rocks Off to playlist!");
+            songAdded();
+        } else if (songChoice.equals("2")) {
+            playlist.addSong(sweetVirginia);
+            System.out.println("Added Sweet Virginia to playlist!");
+            songAdded();
+        } else {
+            System.out.println("Invalid song choice.");
+        }
     }
 
     public static void songAdded() {
