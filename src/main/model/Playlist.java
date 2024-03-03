@@ -1,13 +1,24 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
-public class Playlist {
+public class Playlist implements Writable {
     private ArrayList<Song> playlist;
+    private String name;
 
     // Creates a playlist with no songs
-    public Playlist() {
+    public Playlist(String name) {
         this.playlist = new ArrayList<>();
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
     }
 
     // REQUIRES: song is not already in playlist
@@ -41,5 +52,24 @@ public class Playlist {
     // EFFECTS: return playlist
     public ArrayList<Song> getPlaylist() {
         return playlist;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("songs", songsToJson());
+        return json;
+    }
+
+    // EFFECTS: returns things in this workroom as a JSON array
+    private JSONArray songsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Song s : playlist) {
+            jsonArray.put(s.toJson());
+        }
+
+        return jsonArray;
     }
 }

@@ -3,31 +3,19 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static model.Artist.TheBeatles;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.ArrayList;
 
 class PlaylistTest {
     private Playlist testPlaylist;
     private Song comeTogether;
     private Song something;
-    private Artist theBeatles;
-    private Album abbeyRoad;
-    private ArrayList<Album> beatlesAlbums;
-    private ArrayList<Song> abbeyRoadSongs;
 
     @BeforeEach
     public void runBefore() {
-        testPlaylist = new Playlist();
-        comeTogether = new Song("Come Together", 4, theBeatles, abbeyRoad, "Rock");
-        something = new Song("Something", 3, theBeatles, abbeyRoad, "Rock");
-        beatlesAlbums = new ArrayList<>();
-        beatlesAlbums.add(abbeyRoad);
-        abbeyRoadSongs = new ArrayList<>();
-        abbeyRoadSongs.add(comeTogether);
-        abbeyRoadSongs.add(something);
-        abbeyRoad = new Album(abbeyRoadSongs, 1969, 17, 47);
-        theBeatles = new Artist("The Beatles", beatlesAlbums, "Rock");
+        testPlaylist = new Playlist("Test");
+        comeTogether = new Song("Come Together", 4, TheBeatles);
+        something = new Song("Something", 4, TheBeatles);
     }
 
     @Test
@@ -48,8 +36,8 @@ class PlaylistTest {
 
     @Test
     public void testGetLength() {
-        testPlaylist.addSong(something);
         testPlaylist.addSong(comeTogether);
+        testPlaylist.addSong(something);
         assertEquals(testPlaylist.getLengthMins(), 7);
     }
 

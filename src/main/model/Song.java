@@ -1,18 +1,17 @@
 package model;
 
-public class Song {
+import org.json.JSONObject;
+import persistence.Writable;
+
+public class Song implements Writable {
     private String title;
     private int length;
     private Artist artist;
-    private Album album;
-    private String genre;
 
-    public Song(String title, int length, Artist artist, Album album, String genre) {
+    public Song(String title, int length, Artist artist) {
         this.title = title;
         this.length = length;
         this.artist = artist;
-        this.album = album;
-        this.genre = genre;
     }
 
     // EFFECTS: returns song title
@@ -30,13 +29,16 @@ public class Song {
         return artist;
     }
 
-    // EFFECTS: returns song album
-    public Album getAlbum() {
-        return album;
+    public String toString() {
+        return title + " by " + artist;
     }
 
-    // EFFECTS: returns song genre
-    public String getGenre() {
-        return genre;
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("title", title);
+        json.put("length", length);
+        json.put("artist", artist);
+        return json;
     }
 }
