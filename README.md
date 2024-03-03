@@ -15,7 +15,6 @@ keeping track of information related to songs, artists, and albums.
 - **Remove** a song from the playlist
 - View **# of songs** in playlist
 - View playlist **length** (in minutes)
-- Type a song's name to view its **information**
 
 **Class descriptions:**
 
@@ -42,7 +41,7 @@ Album class:
 - Number of songs
 - Length (in minutes)
 
-*Note: Only songs that have been *
+*Note: Only songs that have been added to the application are accessible*
 
 ## User Stories:
 
@@ -50,5 +49,8 @@ Album class:
 - As a user, I want to view my playlist
 - As a user, I want to be able to remove a song from my playlist
 - As a user, I want to be able to view the # of songs in my playlist
-- As a user, I want to be able to click on a song in my playlist and view its artist, album, length, and genre
+- As a user, I want to be able to view the length of my playlist, in minutes
+
+- As a user, I want to be able to choose to save my playlist when I decide to quit the application
+- As a user, I want to be able to choose to load my playlist from file when I start the application
 
