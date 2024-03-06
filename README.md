@@ -3,18 +3,11 @@
 ## Create, edit, and explore a playlist
 
 This application will allow a user to create a playlist of arbitrary length. A user will be able to add songs to the 
-playlist, with information stored about each song. Various features are listed below.
+playlist, with information stored about each song.
 
 This application will be used by music enthusiasts, or anybody who wants to create a playlist to keep together songs 
 they enjoy listening to. This project is of interest to me because I enjoy listening to music, creating playlists, and 
-keeping track of information related to songs, artists, and albums.
-
-**Playlist function features:**
-- **Add** a song to the playlist
-- **View** the playlist
-- **Remove** a song from the playlist
-- View **# of songs** in playlist
-- View playlist **length** (in minutes)
+keeping track of information related to songs and artists.
 
 **Class descriptions:**
 
@@ -26,9 +19,7 @@ Playlist:
 Song features:
 - Title
 - Length (in minutes)
-- Artist 
-- Album
-- Genre
+- Artist
 
 Artist class:
 - List of albums
@@ -41,8 +32,6 @@ Album class:
 - Number of songs
 - Length (in minutes)
 
-*Note: Only songs that have been added to the application are accessible*
-
 ## User Stories:
 
 - As a user, I want to be able to add a song to my playlist
@@ -53,4 +42,6 @@ Album class:
 
 - As a user, I want to be able to choose to save my playlist when I decide to quit the application
 - As a user, I want to be able to choose to load my playlist from file when I start the application
+
+Bibliography
 

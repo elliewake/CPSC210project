@@ -1,0 +1,15 @@
+{
+  "songs": [
+    {
+      "artist": "Pixies",
+      "length": 5,
+      "title": "Hey"
+    },
+    {
+      "artist": "BobDylan",
+      "length": 4,
+      "title": "Visions of Johanna"
+    }
+  ],
+  "name": "Test playlist"
+}

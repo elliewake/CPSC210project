@@ -15,7 +15,7 @@ public class PlaylistApp {
     private Scanner input;
     private Playlist playlist;
 
-    private static final String JSON_STORE = "./data/workroom.json";
+    private static final String JSON_STORE = "./data/playlist.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
