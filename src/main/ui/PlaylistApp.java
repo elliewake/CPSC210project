@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// Represents the playlist application
 public class PlaylistApp {
     private Scanner input;
     private Playlist playlist;
@@ -19,6 +20,7 @@ public class PlaylistApp {
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
+    // EFFECTS: constructs a new playlist and runs the application
     public PlaylistApp() throws FileNotFoundException {
         input = new Scanner(System.in);
         playlist = new Playlist("User playlist");
@@ -45,9 +47,10 @@ public class PlaylistApp {
             }
         }
 
-        System.out.println("\nQuitting playlist app. Goodbye!!");
+        System.out.println("\nQuitting playlist app. Goodbye!");
     }
 
+    // EFFECTS: displays menu to user with options to proceed
     private void displayMenu() {
         System.out.println("\nSelect what you would like to do:");
         System.out.println("\t+ -> add song to playlist");
@@ -58,6 +61,8 @@ public class PlaylistApp {
         System.out.println("\tq -> quit");
     }
 
+    // MODIFIES: this
+    // EFFECTS: processes user command (key pressed)
     private void processKey(String input) {
         if (input.equals("+")) {
             addNewSong();
@@ -74,6 +79,7 @@ public class PlaylistApp {
         }
     }
 
+    // EFFECTS: prompts user to select Artist of Song and returns chosen Artist
     private Artist getArtist() {
         System.out.println("Please choose the artist of your song");
 
@@ -87,6 +93,7 @@ public class PlaylistApp {
         return Artist.values()[menuSelection - 1];
     }
 
+    // EFFECTS: prompts user to select length of Song and returns entered length
     private int getLength() {
         System.out.println("Please enter length of song, in minutes");
 
@@ -100,6 +107,8 @@ public class PlaylistApp {
         return input.nextInt();
     }
 
+    // MODIFIES: this
+    // EFFECTS: prompts user to enter Artist, length, & title, and adds given Song to Playlist
     private void addNewSong() {
         Artist artist = getArtist();
         int length = getLength();
@@ -109,6 +118,8 @@ public class PlaylistApp {
         playlist.addSong(new Song(title, length, artist));
     }
 
+    // MODIFIES: this
+    // EFFECTS: prompts user to select which Song to remove, and removes chosen Song from Playlist
     private void removeSong() {
         System.out.println("Please select which song you wish to remove:");
 
@@ -122,6 +133,8 @@ public class PlaylistApp {
         playlist.removeSong(playlist.getPlaylist().get(songToRemove - 1));
     }
 
+    // EFFECTS: prints all Songs in current Playlist with respective Artists,
+    // and total length of Playlist in minutes
     private void viewPlaylist() {
         System.out.println("Current Playlist:");
         ArrayList<Song> songs = playlist.getPlaylist();
@@ -133,7 +146,7 @@ public class PlaylistApp {
         System.out.println("Your playlist is " + playlist.getLengthMins() + " minutes long.");
     }
 
-    // EFFECTS: saves the playlist to file
+    // EFFECTS: saves Playlist to file
     private void savePlaylist() {
         try {
             jsonWriter.open();
@@ -146,7 +159,7 @@ public class PlaylistApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: loads playlist from file
+    // EFFECTS: loads Playlist from file
     private void loadPlaylist() {
         try {
             playlist = jsonReader.read();

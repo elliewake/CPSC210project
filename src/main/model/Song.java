@@ -3,6 +3,7 @@ package model;
 import org.json.JSONObject;
 import persistence.Writable;
 
+// Represents a Song with given title, length (in minutes) and Artist
 public class Song implements Writable {
     private String title;
     private int length;
@@ -29,6 +30,7 @@ public class Song implements Writable {
         return artist;
     }
 
+    // EFFECTS: returns String representation of this Song
     public String toString() {
         return title + " by " + artist;
     }

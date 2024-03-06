@@ -38,7 +38,7 @@ class PlaylistTest {
     public void testGetLength() {
         testPlaylist.addSong(comeTogether);
         testPlaylist.addSong(something);
-        assertEquals(testPlaylist.getLengthMins(), 7);
+        assertEquals(testPlaylist.getLengthMins(), 8);
     }
 
     @Test

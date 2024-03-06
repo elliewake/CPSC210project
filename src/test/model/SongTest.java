@@ -16,7 +16,7 @@ public class SongTest {
 
     @Test
     public void testGetTitle() {
-        assertEquals(comeTogether.getTitle(), "Something");
+        assertEquals(comeTogether.getTitle(), "Come Together");
     }
 
     @Test
