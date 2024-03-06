@@ -22,26 +22,21 @@ Song features:
 - Artist
 
 Artist class:
-- List of albums
-- Genre
-- Description
+- Four possible artists (The Beatles, Rolling Stones, Pixies, Bob Dylan)
 
-Album class:
-- List of songs
-- Release date
-- Number of songs
-- Length (in minutes)
 
 ## User Stories:
 
 - As a user, I want to be able to add a song to my playlist
 - As a user, I want to view my playlist
 - As a user, I want to be able to remove a song from my playlist
-- As a user, I want to be able to view the # of songs in my playlist
+- As a user, I want to be able to view a list of the songs in my playlist
 - As a user, I want to be able to view the length of my playlist, in minutes
 
 - As a user, I want to be able to choose to save my playlist when I decide to quit the application
 - As a user, I want to be able to choose to load my playlist from file when I start the application
 
-Bibliography
+*Citations:*
+
+*JsonSerializationDemo used as reference for Json classes and method implementation.*
 
