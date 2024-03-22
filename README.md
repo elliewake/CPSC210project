@@ -36,6 +36,9 @@ Artist class:
 - As a user, I want to be able to choose to save my playlist when I decide to quit the application
 - As a user, I want to be able to choose to load my playlist from file when I start the application
 
+## Instructions for Grader
+1. 
+
 *Citations:*
 
 *JsonSerializationDemo used as reference for Json classes and method implementation.*

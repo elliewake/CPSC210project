@@ -1,19 +1,14 @@
 {
     "songs": [
         {
-            "artist": "Pixies",
-            "length": 4,
-            "title": "Here"
-        },
-        {
-            "artist": "RollingStones",
-            "length": 4,
-            "title": "Wind"
+            "artist": "TheBeatles",
+            "length": 3,
+            "title": "Brown Sugar"
         },
         {
             "artist": "TheBeatles",
             "length": 3,
-            "title": "ComeTogether"
+            "title": "Come Together"
         }
     ],
     "name": "User playlist"
