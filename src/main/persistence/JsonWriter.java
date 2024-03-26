@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+// Represents a writer that writes playlist to JSON data stored in file,
+// to be loaded later
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;

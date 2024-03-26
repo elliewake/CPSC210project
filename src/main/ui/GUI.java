@@ -23,7 +23,10 @@ public class GUI extends JPanel implements ListSelectionListener {
     private static final String removeSong = "Remove song";
     private static final String savePlaylist = "Save playlist";
     private static final String loadPlaylist = "Load playlist";
+    private JButton addButton;
     private JButton removeButton;
+    private JButton saveButton;
+    private JButton loadButton;
     private JTextField songName;
     private ImageIcon image;
 
@@ -31,6 +34,7 @@ public class GUI extends JPanel implements ListSelectionListener {
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
+    // Represents the Graphical User Interface portion of the application
     public GUI() {
         super(new BorderLayout());
 
@@ -39,12 +43,8 @@ public class GUI extends JPanel implements ListSelectionListener {
         songName = new JTextField(10);
         initializeButtons();
 
-        //songName.addActionListener(addListener);
-        //songName.getDocument().addDocumentListener(addListener);
-
         buttonPane = new JPanel();
         initializePanel();
-
 
         JScrollPane listScrollPane = new JScrollPane(list);
         add(listScrollPane, BorderLayout.CENTER);
@@ -56,6 +56,8 @@ public class GUI extends JPanel implements ListSelectionListener {
         jsonReader = new JsonReader(JSON_STORE);
     }
 
+    // MODIFIES: this
+    // EFFECTS: declares and instantiates listModel and playlist to be used in GUI
     public void initialize() {
         listModel = new DefaultListModel();
         listModel.addElement("Brown Sugar");
@@ -70,10 +72,15 @@ public class GUI extends JPanel implements ListSelectionListener {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets up GUI panel with buttonPane and image
     public void initializePanel() {
         buttonPane.setLayout(new BoxLayout(buttonPane,
                 BoxLayout.LINE_AXIS));
         buttonPane.add(removeButton);
+        buttonPane.add(addButton);
+        buttonPane.add(saveButton);
+        buttonPane.add(loadButton);
         buttonPane.add(Box.createHorizontalStrut(5));
         buttonPane.add(new JSeparator(SwingConstants.VERTICAL));
         buttonPane.add(Box.createHorizontalStrut(5));
@@ -89,8 +96,10 @@ public class GUI extends JPanel implements ListSelectionListener {
         add(buttonPane, BorderLayout.PAGE_END);
     }
 
+    // MODIFIES: this
+    // EFFECTS: declares and instantiates buttons to add and remove songs
     public void initializeButtons() {
-        JButton addButton = new JButton(addSong);
+        addButton = new JButton(addSong);
         AddListener addListener = new AddListener(addButton);
         addButton.setActionCommand(addSong);
         addButton.addActionListener(addListener);
@@ -102,15 +111,17 @@ public class GUI extends JPanel implements ListSelectionListener {
         removeButton.setActionCommand(removeSong);
         removeButton.addActionListener(new RemoveListener());
 
-        JButton saveButton = new JButton(savePlaylist);
+        saveButton = new JButton(savePlaylist);
         saveButton.setActionCommand(savePlaylist);
         saveButton.addActionListener(new SaveListener());
 
-        JButton loadButton = new JButton(loadPlaylist);
+        loadButton = new JButton(loadPlaylist);
         loadButton.setActionCommand(loadPlaylist);
         loadButton.addActionListener(new LoadListener());
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets up ActionListener for removeSong button
     class RemoveListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             int index = list.getSelectedIndex();
@@ -133,7 +144,8 @@ public class GUI extends JPanel implements ListSelectionListener {
         }
     }
 
-
+    // MODIFIES: this
+    // EFFECTS: sets up ActionListener for addSong button
     class AddListener implements ActionListener, DocumentListener {
         private boolean alreadyEnabled = false;
         private JButton button;
@@ -175,6 +187,8 @@ public class GUI extends JPanel implements ListSelectionListener {
             list.ensureIndexIsVisible(index);
         }
 
+        // MODIFIES: this
+        // EFFECTS: returns true if song is already in list
         protected boolean alreadyInList(String name) {
             return listModel.contains(name);
         }
@@ -196,12 +210,17 @@ public class GUI extends JPanel implements ListSelectionListener {
             }
         }
 
+        // MODIFIES: this
+        // EFFECTS: if not currently enabled then enables button, otherwise does nothing
         private void enableButton() {
             if (!alreadyEnabled) {
                 button.setEnabled(true);
             }
         }
 
+        // MODIFIES: this
+        // EFFECTS: returns true and disables button if document length <= 0,
+        // otherwise returns false
         private boolean handleEmptyTextField(DocumentEvent e) {
             if (e.getDocument().getLength() <= 0) {
                 button.setEnabled(false);
@@ -212,6 +231,8 @@ public class GUI extends JPanel implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets up ActionListener for savePlaylist button
     class SaveListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -225,6 +246,8 @@ public class GUI extends JPanel implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets up ActionListener for loadPlaylist button
     class LoadListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -276,6 +299,7 @@ public class GUI extends JPanel implements ListSelectionListener {
         frame.setVisible(true);
     }
 
+    // EFFECTS: main method
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.

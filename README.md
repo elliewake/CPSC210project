@@ -37,9 +37,17 @@ Artist class:
 - As a user, I want to be able to choose to load my playlist from file when I start the application
 
 ## Instructions for Grader
-1. 
+1. Generate first required action, "adding multiple Songs to Playlist" by clicking "Add Song" button
+2. Generate second required action, "adding multiple Songs to Playlist" by clicking "Remove Song" button
+3. My visual component is the Abbey Road image which is displayed to the right of the playlist panel for the duration
+of the time the application is open
+4. Save the state of the application by clicking "Save playlist" button
+5. Reload the state of the application by closing the application, restarting, then clicking "Load playlist" button
 
 *Citations:*
 
-*JsonSerializationDemo used as reference for Json classes and method implementation.*
+- *JsonSerializationDemo used as reference for Json classes and method implementation.*
+- *ListDemo from
+https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html
+used as reference for GUI*
 
