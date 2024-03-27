@@ -38,7 +38,8 @@ Artist class:
 
 ## Instructions for Grader
 1. Generate first required action, "adding multiple Songs to Playlist" by clicking "Add Song" button
-2. Generate second required action, "adding multiple Songs to Playlist" by clicking "Remove Song" button
+2. Generate second required action, "adding multiple Songs to Playlist" by selecting a song, then clicking "
+Remove Song" button
 3. My visual component is the Abbey Road image which is displayed to the right of the playlist panel for the duration
 of the time the application is open
 4. Save the state of the application by clicking "Save playlist" button

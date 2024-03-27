@@ -60,10 +60,10 @@ public class GUI extends JPanel implements ListSelectionListener {
     // EFFECTS: declares and instantiates listModel and playlist to be used in GUI
     public void initialize() {
         listModel = new DefaultListModel();
-        listModel.addElement("Brown Sugar");
+        listModel.addElement("Come Together");
 
         playlist = new Playlist("User playlist");
-        playlist.addSong(new Song("Brown Sugar", 3, Artist.TheBeatles));
+        playlist.addSong(new Song("Come Together", 3, Artist.TheBeatles));
         list = new JList(listModel);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setSelectedIndex(0);
@@ -126,8 +126,8 @@ public class GUI extends JPanel implements ListSelectionListener {
         public void actionPerformed(ActionEvent e) {
             int index = list.getSelectedIndex();
             listModel.remove(index);
-            String songName = listModel.getElementAt(index).toString();
-            playlist.removeSong(new Song(songName, 3, Artist.TheBeatles));
+            //String songName = listModel.getElementAt(index).toString();
+            playlist.removeSong(playlist.getPlaylist().get(index));
 
             int size = listModel.getSize();
 
