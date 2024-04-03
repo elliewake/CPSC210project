@@ -25,6 +25,7 @@ public class Playlist implements Writable {
     // MODIFIES: this
     // EFFECTS: adds song to end playlist
     public void addSong(Song song) {
+        EventLog.getInstance().logEvent(new Event("Added song: " + song.getTitle()));
         playlist.add(song);
     }
 
@@ -32,6 +33,7 @@ public class Playlist implements Writable {
     // MODIFIES: this
     // EFFECTS: removes song from playlist
     public void removeSong(Song song) {
+        EventLog.getInstance().logEvent(new Event("Removed song: " + song.getTitle()));
         playlist.remove(song);
     }
 
