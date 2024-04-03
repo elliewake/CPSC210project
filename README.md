@@ -59,6 +59,15 @@ Added song: Hey.
 Tue Apr 02 20:28:24 PDT 2024
 Removed song: GoldenSlumbers.
 
+## Phase 4: Task 3
+There are a number of ways in which my application could be refactored in order to improve the design.
+First, I would split the PlaylistApp class into multiple subclasses. This would greatly increase cohesion and 
+make the code easier to read. 
+
+Another change I would consider making is implementing a Singleton design pattern applied to the Playlist class. 
+This would make it so that there can only ever be one instance of a Playlist, which may simplify the design and improve 
+clarity. However, this would be a tradeoff as there could not be multiple users each with their own distinct Playlist.
+
 *Citations:*
 
 - *JsonSerializationDemo used as reference for Json classes and method implementation.*
