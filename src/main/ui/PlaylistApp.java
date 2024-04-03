@@ -1,8 +1,6 @@
 package ui;
 
-import model.Artist;
-import model.Playlist;
-import model.Song;
+import model.*;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -23,7 +21,6 @@ public class PlaylistApp {
     // EFFECTS: constructs a new playlist and runs the application
     public PlaylistApp() throws FileNotFoundException {
         playlist = new Playlist("User playlist");
-
         input = new Scanner(System.in);
         playlist = new Playlist("User playlist");
         jsonWriter = new JsonWriter(JSON_STORE);
@@ -49,7 +46,14 @@ public class PlaylistApp {
             }
         }
 
-        System.out.println("\nQuitting playlist app. Goodbye!");
+        printEnd(EventLog.getInstance());
+    }
+
+    private void printEnd(EventLog el) {
+        System.out.println("Quitting playlist app.\n");
+        for (Event next : el) {
+            System.out.println(next.toString() + ".\n");
+        }
     }
 
     // EFFECTS: displays menu to user with options to proceed

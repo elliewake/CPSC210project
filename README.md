@@ -45,10 +45,25 @@ of the time the application is open
 4. Save the state of the application by clicking "Save playlist" button
 5. Reload the state of the application by closing the application, restarting, then clicking "Load playlist" button
 
+## Phase 4: Task 2
+*Sample of logged events, shown in form of quitting message:*
+
+Quitting playlist app.
+
+Tue Apr 02 20:28:03 PDT 2024
+Added song: GoldenSlumbers.
+
+Tue Apr 02 20:28:13 PDT 2024
+Added song: Hey.
+
+Tue Apr 02 20:28:24 PDT 2024
+Removed song: GoldenSlumbers.
+
 *Citations:*
 
 - *JsonSerializationDemo used as reference for Json classes and method implementation.*
 - *ListDemo from
 https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html
 used as reference for GUI*
+- *Event and EventLog classes, LogPrinter interface, and LogException class from AlarmSystem application*
 
